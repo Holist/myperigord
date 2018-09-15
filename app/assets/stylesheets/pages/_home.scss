@@ -82,10 +82,16 @@ body {
 #products {
     display: block;
     position: relative;
-    top: -4.5rem;
+    top: -5rem;
     visibility: hidden;
 }
 
+#productors {
+    display: block;
+    position: relative;
+    top: -5rem;
+    visibility: hidden;
+}
 @media only screen and (max-width : 992px) {
 
     #navbar a {
