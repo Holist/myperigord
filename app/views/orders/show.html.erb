@@ -1,2 +1,8 @@
-<h1>Order#show</h1>
-<p>Find me in app/views/order/show.html.erb</p>
+
+<h1 class="text-center title-home">Votre Commande</h1>
+<div class="container">
+  <% @order_products.each do |product| %>
+    <div><%= product.name %></div>
+  <% end %>
+</div>
+
