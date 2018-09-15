@@ -1,4 +1,5 @@
 class OrderProductsController < ApplicationController
+  before_action :authenticate_user! 
   def create
     @order = current_order
     @order_product = @order.order_products.new(order_product_params)
