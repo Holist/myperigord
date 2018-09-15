@@ -11,7 +11,12 @@
   <a href="/" class="navbar-item navbar-link">ACCUEIL</a>
   <a href="#products" class="navbar-item navbar-link">NOS PRODUITS</a>
   <a href="#productors" class="navbar-item navbar-link">NOS PRODUCTEURS</a>
-  <a href="#login" class="navbar-item navbar-link">SE CONNECTER</a>
+  <% unless user_signed_in? %>
+    <a href="#login" class="navbar-item navbar-link">SE CONNECTER</a>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to "MES COMMANDES", orders_path, class: "navbar-item navbar-link"  %>
+  <% end %>
   <a href="#cart" class="basket navbar-item navbar-link"><i class="fas fa-shopping-basket"></i></a>
 
 </div>
