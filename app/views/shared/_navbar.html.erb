@@ -12,8 +12,12 @@
   <a href="#products" class="navbar-item navbar-link">NOS PRODUITS</a>
   <a href="#productors" class="navbar-item navbar-link">NOS PRODUCTEURS</a>
   <%= link_to "SE CONNECTER", new_user_session_path, class: "navbar-item navbar-link"  %>
-  <%= link_to order_path(current_order), class: "basket navbar-item navbar-link" do %>
-    <i class="fas fa-shopping-basket"></i>
+  <% if user_signed_in? %>
+    <%= link_to order_path(current_order), class: "basket navbar-item navbar-link" do %>
+      <i class="fas fa-shopping-basket"></i>
+    <% end %>
+    <%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %>
   <% end %>
+
 
 </div>
