@@ -1,6 +1,13 @@
+<%= image_tag("banner", class: "img-fluid mb-3") %>
 
+<h1 class="text-center">NOS PRODUITS</h1>
 
-<%= image_tag("banner", class: "img-fluid") %>
+  <div class="row">
+  <a id="products"></a>
+      <% @products.each do |product| %>
+        <%= render partial: "components/product", locals: {product: product}%>
+      <% end %>
+  </div>
 
 <h1 class='m-auto'>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
