@@ -1,0 +1,8 @@
+<div class="card-productor" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= productor.productor_banner %>');">
+  <div class="card-productor-description">
+    <h2><%= productor.compagny %></h2>
+    <p><%= productor.quote %></p>
+  </div>
+  <img class="card-productor-user" src="<%= productor.avatar %>">
+  <%= link_to "", productor_path(productor) ,class: "card-productor-link"%>
+</div>
