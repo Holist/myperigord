@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_202856) do
+ActiveRecord::Schema.define(version: 2018_09_15_114441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "order_products", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.integer "quantity"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_products_on_order_id"
+    t.index ["product_id"], name: "index_order_products_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "productors", force: :cascade do |t|
+    t.string "compagny"
+    t.text "description"
+    t.string "avatar"
+    t.string "website"
+    t.string "productor_banner"
+    t.string "quote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_productors_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "photo"
+    t.integer "price"
+    t.bigint "productor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["productor_id"], name: "index_products_on_productor_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +65,19 @@ ActiveRecord::Schema.define(version: 2018_09_14_202856) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+    t.string "phone"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "actable_id"
+    t.string "actable_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "productors", "users"
+  add_foreign_key "products", "productors"
 end

@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'active_record-acts_as'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
