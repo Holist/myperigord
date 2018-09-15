@@ -2,6 +2,7 @@ class OrderProductsController < ApplicationController
   before_action :authenticate_user!
   def index
     @order_products = OrderProduct.where(order: current_order)
+    @order = current_order
   end
 
   def create

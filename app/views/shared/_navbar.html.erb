@@ -9,8 +9,8 @@
 <div id="navbar" class="fixed">
 
   <a href="/" class="navbar-item navbar-link">ACCUEIL</a>
-  <a href="#products" class="navbar-item navbar-link">NOS PRODUITS</a>
-  <a href="#productors" class="navbar-item navbar-link">NOS PRODUCTEURS</a>
+  <a href="/#products" class="navbar-item navbar-link">NOS PRODUITS</a>
+  <a href="/#productors" class="navbar-item navbar-link">NOS PRODUCTEURS</a>
 
   <% unless user_signed_in? %>
      <%= link_to "SE CONNECTER", new_user_session_path, class: "navbar-item navbar-link"  %>
