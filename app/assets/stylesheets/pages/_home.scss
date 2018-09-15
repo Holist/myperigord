@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+body {
+    height: 400vh;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+#navbar {
+    box-shadow: 0 0.063rem 0.313rem 0 rgba(0,0,0,0.07),0 0.063rem 0 0 rgba(0,0,0,0.03); /* 1/16, 5/16, 1/16 */
+    background: #C9D6DF;
+    transition: all 0.3s ease;
+    height: 4.5rem;
+    width: 100%;
+    padding: 0rem 1.875rem 0rem 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-menus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-item {
+    cursor: pointer;
+    padding: 0 1.25rem; /* 20/16 */
+}
+
+.navbar-link {
+    color: #1E2022;
+    font-size: 0.875rem; /* 14/16 */
+}
+
+.navbar-link:hover {
+    color: #048998;
+}
+
+.fixed {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+}
+
+.title {
+    display: flex;
+}
