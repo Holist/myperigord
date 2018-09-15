@@ -74,6 +74,13 @@ body {
     font-size: 1.5rem;
 }
 
+#products {
+    display: block;
+    position: relative;
+    top: -4.5rem;
+    visibility: hidden;
+}
+
 @media only screen and (max-width : 992px) {
 
     #navbar a {
