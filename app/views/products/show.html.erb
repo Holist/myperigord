@@ -1,4 +1,30 @@
-<h1>Product#show</h1>
-<p>Find me in app/views/product/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="img_product_show">
+            <%= image_tag(@product.photo) %>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div>
+            <%= @product.name %>
+          </div>
+        </div>
 
-<%= @product.name %>
+      </div>
+    </div>
+    <div class="col-lg-4 text-center">
+      <h1>producteur</h1>
+    </div>
+  </div>
+</div>
+
+<!-- <div>
+  <%= @product.description %>
+</div>
+
+<div>
+  <%= @product.price %>
+</div> -->
