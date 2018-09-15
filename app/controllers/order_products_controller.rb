@@ -1,9 +1,12 @@
 class OrderProductsController < ApplicationController
+  before_action :authenticate_user! 
   def create
+    @product = Product.find(params[:format])
     @order = current_order
-    @order_product = @order.order_products.new(order_product_params)
+    @order_product = @order.order_products.new(product: @product, quantity: 1, price: @product.price)
     @order_product.save
     session[:order_id] = @order.id
+    redirect_to root_path
   end
 
   def update

@@ -11,12 +11,17 @@
   <a href="/" class="navbar-item navbar-link">ACCUEIL</a>
   <a href="#products" class="navbar-item navbar-link">NOS PRODUITS</a>
   <a href="#productors" class="navbar-item navbar-link">NOS PRODUCTEURS</a>
+
   <% unless user_signed_in? %>
-    <a href="#login" class="navbar-item navbar-link">SE CONNECTER</a>
+     <%= link_to "SE CONNECTER", new_user_session_path, class: "navbar-item navbar-link"  %>
   <% end %>
   <% if user_signed_in? %>
     <%= link_to "MES COMMANDES", orders_path, class: "navbar-item navbar-link"  %>
+    <%= link_to order_path(current_order), class: "basket navbar-item navbar-link" do %>
+      <i class="fas fa-shopping-basket"></i>
+    <% end %>
+    <%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %>
   <% end %>
-  <a href="#cart" class="basket navbar-item navbar-link"><i class="fas fa-shopping-basket"></i></a>
+
 
 </div>
