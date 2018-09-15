@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :customer
   has_many :order_products, dependent: :destroy
+
   # before_save :update_subtotal
 
   # def subtotal
@@ -12,5 +13,8 @@ class Order < ApplicationRecord
   # def method_name
   #   self[:subtotal] = subtotal
   # end
+
+
+  monetize :amount_cents
 
 end
