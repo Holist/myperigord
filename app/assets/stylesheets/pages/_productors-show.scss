@@ -1,0 +1,26 @@
+.productor-presentation {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.productor-quote {
+  flex-grow: 1;
+  text-align: center;
+}
+
+
+.productor-description {
+  text-align: justify;
+}
+
+.productor-contact {
+  text-align: center;
+  justify-content: center;
+  margin-left: 80px;
+}
+
+.productor-contact p {
+  margin: 0;
+}
