@@ -1,5 +1,9 @@
 class OrderProductsController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
+  def index
+    @order_products = OrderProduct.where(order: current_order)
+  end
+
   def create
     @product = Product.find(params[:format])
     @order = current_order

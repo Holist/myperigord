@@ -1,8 +1,7 @@
 
-<h1 class="text-center title-home">Votre Commande</h1>
+<h1 class="text-center title-home">Votre Panier</h1>
 <div class="container">
   <% @order_products.each do |op| %>
     <div><%= op.product.name %></div>
   <% end %>
 </div>
-
