@@ -1,0 +1,12 @@
+<h1 class="text-center title-home">Mes Commandes</h1>
+
+<div class="container order-list">
+  <% @orders.each_with_index do |order, index| %>
+    <div class="order_title">
+      <%= link_to order_path(order) do %>
+          <i class="fas fa-angle-double-right"></i> Commande N° <%= index + 1 %> - <%= order.created_at.strftime("commandée le %m/%d/%Y") %>
+      <% end %>
+      <hr>
+    </div>
+  <% end %>
+</div>
