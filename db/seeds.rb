@@ -11,15 +11,15 @@ puts "Start Seed"
 
 puts 'Cleaning db...'
   Productor.destroy_all
-  User.destroy_all
+  Customer.destroy_all
   Product.destroy_all
   Order.destroy_all
   OrderProduct.destroy_all
 puts 'Cleaning done'
 
-puts 'Starts User Creation'
-  u1 = User.create(email: "myperigord@gmail.com", password: "azerty", first_name: "My", last_name: "Perigord", address: "Rue du Fois Gras, 33560 Perigord", phone: "0345678923")
-  u2 = User.create(email: "henri.dupuis@gmail.com", password: "azerty", first_name: "Henri", last_name: "Dupuis", address: "Rue du Lac, 33560 Riberac", phone: "0345678923")
+puts 'Starts Customer Creation'
+  u1 = Customer.create(email: "myperigord@gmail.com", password: "azerty", first_name: "My", last_name: "Perigord", address: "Rue du Fois Gras, 33560 Perigord", phone: "0345678923")
+  u2 = Customer.create(email: "henri.dupuis@gmail.com", password: "azerty", first_name: "Henri", last_name: "Dupuis", address: "Rue du Lac, 33560 Riberac", phone: "0345678923")
 puts 'End'
 
 puts 'Starts Producer Creation'
@@ -52,9 +52,9 @@ puts 'Starts Product Creation'
 puts 'End'
 
 puts 'Starts Order Creation'
-  o1 = Order.create(user: u2)
-  o2 = Order.create(user: u1)
-  o3 = Order.create(user: u2)
+  o1 = Order.create(customer: u2)
+  o2 = Order.create(customer: u1)
+  o3 = Order.create(customer: u2)
 puts 'End'
 
 puts 'Starts OrderProducts Creation'
