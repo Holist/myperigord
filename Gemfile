@@ -20,7 +20,8 @@ gem 'webpacker'
 gem 'active_record-acts_as'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-
+gem 'rails-i18n', '~> 5.1'
+gem 'money-rails', '~> 1.7'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
