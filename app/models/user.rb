@@ -5,9 +5,6 @@ class User < ApplicationRecord
   has_many :products
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-<<<<<<< HEAD
   actable
-=======
->>>>>>> 54b5224a31439a3a61ea636e6b2ba6dbe3ecec36
+
 end
