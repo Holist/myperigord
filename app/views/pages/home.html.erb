@@ -1,7 +1,7 @@
 <%= image_tag("banner", class: "img-fluid mb-3") %>
 
   <a id="products"></a>
-<h2 class="text-center">NOS PRODUITS</h2>
+  <div class="text-center title-home">Nos Produits</div>
 
   <div class="row">
       <% @products.each do |product| %>
@@ -11,6 +11,12 @@
       <% end %>
   </div>
 
+<div class="text-center title-home">Nos Producteurs</div>
 
-<h1 class='m-auto'>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <a id="productors"></a>
+  <% @productors.each do |productor| %>
+    <%= render partial: "components/productor", locals: {productor: productor}%>
+  <% end %>
+</div>
+

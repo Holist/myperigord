@@ -3,7 +3,12 @@ body {
     height: 400vh;
     background-color: #FFF;
 }
-  
+
+.title-home {
+  font-weight: 300;
+  font-size: 50px;
+  color: #adabab;
+}
 #navbar {
     box-shadow: 0 0.063rem 0.313rem 0 rgba(0,0,0,0.07),0 0.063rem 0 0 rgba(0,0,0,0.03); /* 1/16, 5/16, 1/16 */
     background: #FFF;
@@ -81,6 +86,12 @@ body {
     visibility: hidden;
 }
 
+#productors {
+    display: block;
+    position: relative;
+    top: -5rem;
+    visibility: hidden;
+}
 @media only screen and (max-width : 992px) {
 
     #navbar a {
@@ -88,7 +99,7 @@ body {
         padding-top: 30px;
         letter-spacing: 0px !important;
     }
-        
+
     .navbar-link {
         color: #1E2022;
         font-size: 0.6rem;

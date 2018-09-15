@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @products = Product.all.sample(8)
+    @products = Product.all
+    @productors = Productor.all
   end
 end
