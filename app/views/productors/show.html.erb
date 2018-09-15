@@ -31,5 +31,12 @@
     </div>
   </div>
 
+  <div class="row">
+  <a id="products"></a>
+    <% @productor.products.each do |product| %>
+      <%= render partial: "components/product", locals: {product: product}%>
+    <% end %>
+</div>
+
 </div>
 
