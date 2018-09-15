@@ -1,14 +1,20 @@
 <%= image_tag("banner", class: "img-fluid mb-3") %>
 
-<h1 class="text-center">NOS PRODUITS</h1>
+<div class="text-center title-home">Nos Produits</div>
 
-  <div class="row">
+<div class="row">
   <a id="products"></a>
-      <% @products.each do |product| %>
-        <%= render partial: "components/product", locals: {product: product}%>
-      <% end %>
-  </div>
+    <% @products.each do |product| %>
+      <%= render partial: "components/product", locals: {product: product}%>
+    <% end %>
+</div>
 
+<div class="text-center title-home">Nos Producteurs</div>
 
-<h1 class='m-auto'>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <a id="productors"></a>
+  <% @productors.each do |productor| %>
+    <%= render partial: "components/productor", locals: {productor: productor}%>
+  <% end %>
+</div>
+
