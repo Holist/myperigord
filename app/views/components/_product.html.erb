@@ -1,18 +1,17 @@
-<div class="col-md-6 col-lg-4 col-xs-12 mb-3">
-
-    <div class="wrapper">
-        <div class="productcard">
-            <div class="top" style=" background: url( <%= product.photo %> ) no-repeat center center; background-size: contain; "></div>
-            <div class="bottom">
+<div class="wrapper">
+    <div class="productcard">
+        <div class="top" style=" background: url( <%= product.photo %> ) no-repeat center center; background-size: contain; "></div>
+        <div class="bottom">
             <div class="left">
                 <div class="details">
-                <h1><%= product.name %></h1>
-                <p><%= product.price %>€</p>
+                    <h1><%= product.name %></h1>
+                    <p><%= humanized_money_with_symbol(product.price) %></p>
                 </div>
-                <div class="buy"><i class="fas fa-cart-plus"></i></div>
-            </div>
+                <%= link_to order_products_path(product), :method => "post", class: "buy" do %>
+                    <i class="fas fa-cart-plus"></i>
+                <% end %>
             </div>
         </div>
+        <img class="card-user" src="<%= product.productor.avatar %>">
     </div>
-
 </div>
