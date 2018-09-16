@@ -1,5 +1,26 @@
-.image_product {
+.image_product_show {
   max-width: 100%;
-  min-height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
+.productor {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: white;
+    margin: 30px 0;
+    letter-spacing: 8px;
+    opacity: 0.4;
+}
+.productor-name {
+  color: white;
+}
+
+
+.image-productor {
+  max-width: 100%;
+}
+
+.background-color {
+  background: rgb(73, 60, 70);
 }
