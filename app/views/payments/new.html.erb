@@ -1,11 +1,11 @@
 <div class="container page_size">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-    <h3>Paiement de vos produits sur MyPerigord</h3>
+    <h3>Paiement sécurisé - MyPerigord</h3>
       <%= form_tag order_payments_path(@order) do %>
         <article>
           <label class="amount">
-            <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+            <span>Montant de votre commande: <%= humanized_money_with_symbol(@order.amount) %></span>
           </label>
         </article>
 
@@ -15,7 +15,7 @@
           data-email="<%= current_user.email %>"
           data-description="Votre commande du <%= @order.created_at %>"
           data-amount="<%= @order.amount_cents %>"
-          data-currency="<%= @order.amount.currency %>"></script>
+          data-currency="<%= @order.amount.currency %>" class="text-center"></script>
 
       <% end %>
     </div>
