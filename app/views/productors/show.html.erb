@@ -34,7 +34,7 @@
   <div class="row">
   <a id="products"></a>
     <% @productor.products.each do |product| %>
-      <%= render partial: "components/product", locals: {product: product}%>
+      <%= render partial: "components/product_productor_show", locals: {product: product}%>
     <% end %>
 </div>
 
