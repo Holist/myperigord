@@ -3,7 +3,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .productor {
     text-transform: uppercase;
     font-size: 14px;
@@ -12,15 +11,26 @@
     letter-spacing: 8px;
     opacity: 0.4;
 }
-.productor-name {
+
+.productor-first-name {
+  letter-spacing: none;
   color: white;
 }
 
+.productor-last-name {
+  letter-spacing: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
 
+}
 .image-productor {
   max-width: 100%;
 }
-
 .background-color {
   background: rgb(73, 60, 70);
+}
+
+.product-description {
+  font-size: 0.8rem;
 }

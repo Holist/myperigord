@@ -7,6 +7,7 @@
         </div>
         <div class="col-lg-6">
           <%= @product.name %>
+          <%= @product.price %>
         </div>
       </div>
     </div>
@@ -14,10 +15,10 @@
       <div class="background-color p-3">
         <h1 class="productor">producteur</h1>
         <%= image_tag(@product.productor.avatar, class:"image-productor") %>
-        <div class="my-2">
-          <span class="productor"><%= @product.productor.acting_as.first_name %></span> <b class="productor"><%= @product.productor.acting_as.last_name %></b>
+        <div class="my-2 d-flex justify-content-end align-items-center">
+          <span class="productor-first-name text-right mr-1"><%= @product.productor.acting_as.first_name %></span> <b class="productor-last-name text-right"><%= @product.productor.acting_as.last_name %></b>
         </div>
-        <div class="text-white text-left mt-4">
+        <div class="text-white text-left mt-4 product-description">
           <%= @product.productor.description %>
         </div>
       </div>

@@ -1,0 +1,42 @@
+<div class="banner" style= "background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url( <%= @productor.productor_banner %> ) center">
+  <h1> <%= @productor.compagny %> </h1>
+
+</div>
+
+<div class="container">
+  <div class="productor-presentation">
+
+    <%= image_tag @productor.avatar, class: "productor-avatar" %>
+
+    <div class="productor-quote">
+      <i class="fas fa-quote-left mr-5" style="font-size: 35px"></i>
+      <em><%= @productor.quote %> </em>
+      <i class="fas fa-quote-right ml-5" style="font-size: 35px"></i>
+    </div>
+
+  </div>
+
+  <div class="productor-infos d-flex">
+    <div class="productor-description">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum aspernatur autem pariatur molestias quia, porro voluptates sit vero alias natus itaque eaque fuga et dolorum mollitia, quibusdam magni id quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque, minima impedit ipsam modi ab qui quisquam cupiditate aspernatur facilis eius illum, temporibus, quibusdam saepe laudantium nulla labore obcaecati cum.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates pariatur, optio recusandae eveniet tempora a natus provident, at officiis doloribus aperiam libero assumenda impedit ducimus sit, explicabo nemo nobis asperiores.</p>
+    </div>
+
+    <div class="productor-contact d-flex flex-column">
+      <p> <%= @productor.compagny %> </p>
+      <p> <%= @productor.first_name %> <%= @productor.last_name %> </p>
+      <p> <%= @productor.address %> </p>
+      <p> <%= @productor.phone %></p>
+      <p> <%= @productor.email %></p>
+    </div>
+  </div>
+
+  <div class="row">
+  <a id="products"></a>
+    <% @productor.products.each do |product| %>
+      <%= render partial: "components/product", locals: {product: product}%>
+    <% end %>
+</div>
+
+</div>
+

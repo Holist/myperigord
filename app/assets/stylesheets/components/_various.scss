@@ -1,0 +1,12 @@
+.order_title a {
+   text-decoration: none !important;
+    opacity: 0.6;
+    color: black;
+  &:hover {
+    text-decoration: none !important;
+    opacity: 1;
+  }
+}
+.order-list {
+  margin-top: 50px;
+}
