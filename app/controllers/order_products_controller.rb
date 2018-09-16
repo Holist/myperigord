@@ -8,11 +8,18 @@ class OrderProductsController < ApplicationController
   def create
     @product = Product.find(params[:format])
     @order = current_order
-    @order_product = @order.order_products.new(product: @product, quantity: 1, price: @product.price)
+    @order_product = @order.order_products.find_or_create_by(product: @product)
+
+    if @order_product.quantity.nil? 
+      @order_product.quantity = 1
+    else
+      @order_product.quantity += 1
+    end
+
+    @order_product.price = @product.price
     @order_product.save
     session[:order_id] = @order.id
     @order.amount_update
-    redirect_to root_path
   end
 
   def update

@@ -76,6 +76,7 @@ body {
 .basket {
     padding-top: 14px !important;
     font-size: 1.5rem;
+    position: relative;
 }
 
 #products {
@@ -91,6 +92,41 @@ body {
     top: -5rem;
     visibility: hidden;
 }
+
+// basket number
+
+.count {
+    /* number of items indicator */
+    position: absolute;
+    top: 37px;
+    right: 6px;
+    height: 25px;
+    width: 25px;
+    background: #e94b35;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50%;
+    text-indent: 0;
+    -webkit-transition: -webkit-transform .2s .5s;
+    transition: -webkit-transform .2s .5s;
+    transition: transform .2s .5s;
+    transition: transform .2s .5s, -webkit-transform .2s .5s;
+  }
+
+  .count p {
+    position: absolute;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+
 @media only screen and (max-width : 992px) {
 
     #navbar a {
