@@ -2,12 +2,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_order
+
+
   def current_order
     if user_signed_in?
-      if !session[:order_id].nil?
-        Order.find(session[:order_id])
+      if session[:order_id].present?
+        order ||= Order.find(session[:order_id])
+        return order
       else
-        Order.create(customer: current_user.specific)
+        order = Order.create(customer: current_user.specific)
+        session[:order_id] = order.id
+        return order
       end
     end
   end
