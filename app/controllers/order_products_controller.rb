@@ -7,6 +7,7 @@ class OrderProductsController < ApplicationController
 
   def create
     @product = Product.find(params[:format])
+    
     @order_product = current_order.order_products.find_or_create_by(product: @product)
 
     @order_product.quantity.nil? ? @order_product.quantity = 1 : @order_product.quantity += 1
