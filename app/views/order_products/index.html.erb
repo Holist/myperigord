@@ -1,11 +1,14 @@
 <div class="container">
   <div class="order-container">
-    <h1 class="text-center title-home">Votre Panier</h1>
+    <h1 class="text-center title-home my-4">Votre Panier</h1>
+
     <% @order_products.each_with_index do |op, index| %>
       <div class="command-slats d-flex">
+
         <div class="w-25 text-center">
           <%= image_tag(op.product.photo, class:"command-slat-img") %>
         </div>
+
         <div class="command-slat-infos d-flex flex-grow-1 justify-content-between align-items-center">
           <div class="content-left d-flex-column justify-content-center">
             <div class="text-left"><b><%= op.product.name %></div></b>
@@ -18,21 +21,21 @@
           <div class="content-right">
             <b><%= op.price %></b>
           </div>
-
         </div>
-        <hr>
-
       </div>
+      <div class="line-bottom my-4"></div>
     <% end %>
-    <hr>
-
-  <div class="shopping-card-amount text-right">Montant Total de votre commande &nbsp:&nbsp <b> <%= @order.amount %></div> </b>
 
 
-   <%= form_tag orders_path do %>
+  <div class="shopping-card-amount text-right my-4">Montant Total de votre commande &nbsp:&nbsp <b> <%= @order.amount %>
+    <%= form_tag orders_path do %>
       <%= hidden_field_tag 'customer_id', current_user.id %>
       <%= submit_tag 'Commander', class: 'btn btn-primary' %>
     <% end %>
+  </div> </b>
+
+
+
   </div>
 </div>
 
