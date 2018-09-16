@@ -11,4 +11,11 @@ class OrdersController < ApplicationController
   end
 
 
+  def create
+    # customer = current_user
+    # order_products = current_order.order_products
+    # order  = Order.create!(amount: teddy.price, user: current_user)
+    redirect_to new_order_payment_path(current_order)
+  end
+
 end

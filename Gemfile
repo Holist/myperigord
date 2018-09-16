@@ -22,6 +22,8 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'rails-i18n', '~> 5.1'
 gem 'money-rails', '~> 1.7'
+gem 'stripe'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development do
   gem 'web-console', '>= 3.3.0'
