@@ -1,6 +1,8 @@
 <div class="wrapper">
     <div class="productcard">
-        <div class="top" style=" background: url( <%= product.photo %> ) no-repeat center center; background-size: contain; "></div>
+        <div class="top" style=" background: url( <%= product.photo %> ) no-repeat center center; background-size: contain; ">
+          <%= link_to "", product_path(product), class:"product-link" %>
+        </div>
         <div class="bottom">
             <div class="left">
                 <div class="details">

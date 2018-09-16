@@ -25,16 +25,15 @@
       </div>
     <% end %>
     <hr>
-  <% end %>
+
   <div class="shopping-card-amount text-right">Montant Total de votre commande &nbsp:&nbsp <b> <%= @order.amount %></div> </b>
-  
+
 
    <%= form_tag orders_path do %>
       <%= hidden_field_tag 'customer_id', current_user.id %>
       <%= submit_tag 'Commander', class: 'btn btn-primary' %>
     <% end %>
-
-    </div>
+  </div>
 </div>
 
 

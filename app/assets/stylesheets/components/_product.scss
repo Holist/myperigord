@@ -15,13 +15,14 @@
       transform: scale(1);
       box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
     }
-    
+
     .productcard{
       width:100%;
       height:100%;
       .top{
         height: 80%;
         width:100%;
+        position:relative;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
@@ -75,7 +76,7 @@
             }
           }
         }
-      }        
+      }
     }
   }
 
