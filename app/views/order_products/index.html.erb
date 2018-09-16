@@ -6,4 +6,11 @@
     <hr>
   <% end %>
    Montant Total de votre commande : <%= @order.amount %>
+
+   <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'customer_id', current_user.id %>
+      <%= submit_tag 'Commander', class: 'btn btn-primary' %>
+    <% end %>
 </div>
+
+
