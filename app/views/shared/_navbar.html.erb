@@ -18,11 +18,9 @@
     <%= link_to "MES COMMANDES", orders_path, class: "navbar-item navbar-link"  %>
     <%= link_to order_products_path, class: "basket navbar-item navbar-link" do %>
       <i class="fas fa-shopping-basket"></i>
-      <% unless @order.order_products.count == 0 %>
-        <div class="count">
-          <p><%= @order.order_products.count %></p>
+        <div class="count <%= "d-none" if @order.order_products.count == 0%>">
+          <p class="cart-number"><%= @order.order_products.count %></p>
         </div>
-      <% end %>
     <% end %>
     <%= link_to 'Se deconnecter', destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %>
   <% end %>
