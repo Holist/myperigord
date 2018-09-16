@@ -5,6 +5,7 @@ class Order < ApplicationRecord
 
   def amount_update
     amount_cents = self.order_products.map{|op| op.quantity * op.price_cents}.reduce(:+)
+    amount_cents = 0 if amount_cents.nil?
     self.update(amount_cents: amount_cents)
   end
 

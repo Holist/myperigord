@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if user_signed_in?
-      if session[:order_id].present?
+      if session[:order_id].present? && Order.find(session[:order_id]).status == "pending"
         order ||= Order.find(session[:order_id])
         return order
       else
