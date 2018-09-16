@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_order
+
+  before_action :set_order
+
+  def set_order
+    @order = current_order
+  end
+
   def current_order
     if user_signed_in?
       if !session[:order_id].nil?
