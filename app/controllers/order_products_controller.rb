@@ -10,11 +10,7 @@ class OrderProductsController < ApplicationController
     @order = current_order
     @order_product = @order.order_products.find_or_create_by(product: @product)
 
-    if @order_product.quantity.nil? 
-      @order_product.quantity = 1
-    else
-      @order_product.quantity += 1
-    end
+    @order_product.quantity.nil? ? @order_product.quantity = 1 : @order_product.quantity += 1
 
     @order_product.price = @product.price
     @order_product.save

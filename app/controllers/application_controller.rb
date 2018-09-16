@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :set_order
 
   def set_order
-    @order = current_order
+    @current_order = current_order
   end
 
   def current_order
