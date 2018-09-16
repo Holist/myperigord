@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="order-container">
-    <h1 class="text-center title-home">Votre Commande</h1>
+    <h1 class="text-center title-home my-4">Votre Commande : payée </h1>
     <% @order_products.each_with_index do |op, index| %>
       <div class="command-slats d-flex">
         <div class="w-25 text-center">
@@ -24,6 +24,7 @@
         <hr>
 
       </div>
+      <div class="line-bottom my-4"></div>
     <% end %>
     <hr>
 

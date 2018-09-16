@@ -14,9 +14,12 @@
               <div class="mb-2">
                 <%= @product.price %>€
               </div>
-              <div class="btn btn-danger">
-                Ajouter au pannier
-              </div>
+
+              <%= link_to order_products_path(@product, product_id: @product.id), :method => "post", remote: true, class: "buy" do %>
+                  <i class="fas fa-cart-plus cart-style"></i>
+              <% end %>
+
+
             </div>
           </div>
         </div>
