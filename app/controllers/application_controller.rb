@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if !session[:order_id].nil?
       Order.find(session[:order_id])
     else
-      Order.create(customer_id: current_user.id)
+      Order.new(customer: current_user.specific)
     end
   end
 
