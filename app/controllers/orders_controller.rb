@@ -9,4 +9,6 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order_products = @order.order_products
   end
+
+
 end
