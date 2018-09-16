@@ -2,19 +2,19 @@ class Order < ApplicationRecord
   belongs_to :customer
   has_many :order_products, dependent: :destroy
 
-  # before_save :update_subtotal
+  def amount_update
+    amount_cents = self.order_products.map{|op| op.quantity * op.price_cents}.reduce(:+)
+    self.update(amount_cents: amount_cents)
+  end
 
-  # def subtotal
-  #   order.product.collect { |op| op.valid? ? (op.quantity * op.price) : 0 }.sum
-  # end
+  def amount_create
+    a = self.order_products.map{|op| op.quantity * op.price_cents}.reduce(:+)
+    self.amount_cents = a
+  end
 
-  # private
-
-  # def method_name
-  #   self[:subtotal] = subtotal
-  # end
-
+  def order_products?
+    self.order_products.present?
+  end
 
   monetize :amount_cents
-
 end

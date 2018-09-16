@@ -7,11 +7,10 @@
                     <h1><%= product.name %></h1>
                     <p><%= humanized_money_with_symbol(product.price) %></p>
                 </div>
-                <%= link_to order_products_path(product, product_id: product.id), :method => "post", remote: true, class: "buy" do %>
+                <%= link_to order_products_path(product, product_id: product.id), :method => "post", class: "buy" do %>
                     <i class="fas fa-cart-plus"></i>
                 <% end %>
             </div>
         </div>
-        <img class="card-productor-user" src="<%= product.productor.avatar %>">
     </div>
 </div>
