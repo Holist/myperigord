@@ -19,13 +19,14 @@ class OrderProductsController < ApplicationController
     @order_product.price = @product.price
     @order_product.save
     session[:order_id] = @order.id
-    
+    @order.amount_update
   end
 
   def update
     @order = current_order
     @order_product = @order.order_products.find(params[:id])
     @order_product.update_attributes(order_product_params)
+    @order.amount_update
     @order_products = @order.order_products
   end
 
