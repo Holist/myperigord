@@ -28,9 +28,24 @@
   max-width: 100%;
 }
 .background-color {
+  position: relative;
   background: rgb(73, 60, 70);
 }
 
 .product-description {
   font-size: 0.8rem;
+}
+
+.product-price {
+  min-height: 100%;
+}
+.product-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.line-top {
+  border-top: 1px solid rgba(100, 100, 100, 0.2);
 }

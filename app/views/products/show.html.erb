@@ -1,35 +1,52 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-lg-8">
-      <div class="row">
-        <div class="col-lg-6 text-center">
-          <%= image_tag(@product.photo, class:"image_product_show")  %>
+      <div class=" d-flex flex-column justify-content-center product-price">
+        <div class="row">
+          <div class="col-lg-6 text-center">
+            <%= image_tag(@product.photo, class:"image_product_show")  %>
+          </div>
+          <div class="col-lg-6">
+            <div class=" d-flex flex-column justify-content-center product-price">
+              <div class="mb-2">
+                <b><%= @product.name %></b>
+              </div>
+              <div class="mb-2">
+                <%= @product.price %>€
+              </div>
+              <div class="btn btn-danger">
+                Ajouter au pannier
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-          <%= @product.name %>
-          <%= @product.price %>
+        <div class="row">
+          <div class="col-12 mt-3">
+            <p> <%= @product.description %></p>
+          </div>
         </div>
       </div>
     </div>
     <div class="col-lg-4 text-center">
       <div class="background-color p-3">
+        <%= link_to "", productor_path(@product.productor), class:"product-link" %>
+        <a href="#" class="position-absolute"></a>
         <h1 class="productor">producteur</h1>
         <%= image_tag(@product.productor.avatar, class:"image-productor") %>
         <div class="my-2 d-flex justify-content-end align-items-center">
-          <span class="productor-first-name text-right mr-1"><%= @product.productor.acting_as.first_name %></span> <b class="productor-last-name text-right"><%= @product.productor.acting_as.last_name %></b>
-        </div>
-        <div class="text-white text-left mt-4 product-description">
-          <%= @product.productor.description %>
+            <span class="productor-first-name text-right mr-1"><%= @product.productor.acting_as.first_name %></span> <b class="productor-last-name text-right"><%= @product.productor.acting_as.last_name %></b>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="text-center line-top mt-5">
+    <p class="my-4">Nos Autres produits</p>
+  </div>
 
-<!-- <div>
-  <%= @product.description %>
+  <div class="row">
+  <a id="products"></a>
+    <% @product.productor.products.each do |product| %>
+      <%= render partial: "components/product_productor_show", locals: {product: product}%>
+    <% end %>
+  </div>
 </div>
-
-<div>
-  <%= @product.price %>
-</div> -->
