@@ -2,7 +2,7 @@
 <h1 class="text-center title-home">Votre Panier</h1>
 <div class="container">
   <% @order_products.each_with_index do |op, index| %>
-    <%= index + 1 %> - <%= op.product.name %> - <%= op.price %>
+    <%= index + 1 %> - <%= op.product.name %> - <%= op.price %> - <%= op.quantity %>
     <hr>
   <% end %>
    Montant Total de votre commande : <%= @order.amount_cents %>
