@@ -1,0 +1,24 @@
+<div class="container page_size">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+    <h1>Achat de vos produits sur MyPerigord</h1>
+      <%= form_tag order_payments_path(@order) do %>
+        <article>
+          <label class="amount">
+            <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+          </label>
+        </article>
+
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_f5GH45bDCvLIqEOmFHRJkiRY"
+          data-name="Ma Commande"
+          data-email="<%= current_user.email %>"
+          data-description="Votre commande du <%= @order.created_at %>"
+          data-amount="<%= @order.amount_cents %>"
+          data-currency="<%= @order.amount.currency %>"></script>
+
+      <% end %>
+    </div>
+  </div>
+</div>
