@@ -11,6 +11,7 @@ class OrderProductsController < ApplicationController
     @order_product = @order.order_products.new(product: @product, quantity: 1, price: @product.price)
     @order_product.save
     session[:order_id] = @order.id
+    @order.amount_update
     redirect_to root_path
   end
 
@@ -18,6 +19,7 @@ class OrderProductsController < ApplicationController
     @order = current_order
     @order_product = @order.order_products.find(params[:id])
     @order_product.update_attributes(order_product_params)
+    @order.amount_update
     @order_products = @order.order_products
   end
 
