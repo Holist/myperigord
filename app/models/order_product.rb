@@ -3,7 +3,7 @@ class OrderProduct < ApplicationRecord
   belongs_to :order
   validates :product, presence: true
   validates :order, presence: true
-
+  monetize :price_cents
   # before_save :finalize
 
   # def total_price

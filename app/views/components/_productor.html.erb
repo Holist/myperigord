@@ -1,8 +1,19 @@
-<div class="card-productor" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= productor.productor_banner %>');">
-  <div class="card-productor-description">
-    <h2><%= productor.compagny %></h2>
-    <p><%= productor.quote %></p>
+<div class="container-productor">
+  <div class="card-productor" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= productor.productor_banner %>');">
+    <div class="side">
+      <div class="card-productor-description">
+        <h2><%= productor.compagny %></h2>
+      </div>
+      <img class="card-productor-user" src="<%= productor.avatar %>">
+      <%= link_to "", productor_path(productor) ,class: "card-productor-link"%>
+    </div>
+    <div class="side back">
+      <i class="fas fa-quote-left mr-5" style="font-size: 35px"></i>
+      <em><%= productor.quote %> </em>
+      <i class="fas fa-quote-right ml-5" style="font-size: 35px"></i>
+      <img class="card-productor-user-backside" src="<%= productor.avatar %>">
+      <%= link_to "", productor_path(productor) ,class: "card-productor-link"%>
+    </div>
   </div>
-  <img class="card-productor-user" src="<%= productor.avatar %>">
-  <%= link_to "", productor_path(productor) ,class: "card-productor-link"%>
 </div>
+

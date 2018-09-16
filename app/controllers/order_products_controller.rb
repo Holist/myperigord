@@ -8,16 +8,25 @@ class OrderProductsController < ApplicationController
   def create
     @product = Product.find(params[:format])
     @order = current_order
-    @order_product = @order.order_products.new(product: @product, quantity: 1, price: @product.price)
+    @order_product = @order.order_products.find_or_create_by(product: @product)
+
+    if @order_product.quantity.nil? 
+      @order_product.quantity = 1
+    else
+      @order_product.quantity += 1
+    end
+
+    @order_product.price = @product.price
     @order_product.save
     session[:order_id] = @order.id
-    redirect_to root_path
+    @order.amount_update
   end
 
   def update
     @order = current_order
     @order_product = @order.order_products.find(params[:id])
     @order_product.update_attributes(order_product_params)
+    @order.amount_update
     @order_products = @order.order_products
   end
 
