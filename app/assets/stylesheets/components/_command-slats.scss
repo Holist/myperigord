@@ -1,0 +1,15 @@
+.order-container {
+  min-height: calc(100vh - 322px);
+}
+
+.command-slats {
+  height: 100px;
+
+  .command-slat-img {
+    max-height: 100%;
+  }
+  .content-left {
+    min-width: 200px;
+  }
+
+}

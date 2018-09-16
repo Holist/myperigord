@@ -1,11 +1,32 @@
 
-<h1 class="text-center title-home">Votre Commande</h1>
 <div class="container">
-  <% @order_products.each_with_index do |op, index| %>
-    <%= index + 1 %> - <%= op.product.name %> - <%= op.price %>
+  <div class="order-container">
+    <h1 class="text-center title-home">Votre Commande</h1>
+    <% @order_products.each_with_index do |op, index| %>
+      <div class="command-slats d-flex">
+        <div class="w-25 text-center">
+          <%= image_tag(op.product.photo, class:"command-slat-img") %>
+        </div>
+        <div class="command-slat-infos d-flex flex-grow-1 justify-content-between align-items-center">
+          <div class="content-left d-flex-column justify-content-center">
+            <div class="text-left"><b><%= op.product.name %></div></b>
+            <div class="d-flex justify-content-around">
+              <%= link_to "❌ Effacer", order_product_path(op), method: :delete %>
+              Quantité: <%= op.quantity %>
+            </div>
+
+          </div>
+          <div class="content-right">
+            <b><%= humanized_money_with_symbol(op.price) %></b>
+          </div>
+
+        </div>
+        <hr>
+
+      </div>
+    <% end %>
     <hr>
-  <% end %>
-  <hr>
-  Montant Total de votre commande : <%= @order.amount_cents %>
+    <div class="shopping-card-amount text-right">Montant Total de votre commande &nbsp:&nbsp <b> <%= @order.amount %></div> </b>
+  </div>
 </div>
 
